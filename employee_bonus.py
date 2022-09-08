@@ -4,9 +4,7 @@ def main ():
     infile = open("EmployeePay.csv","r")
 
     csvfile = csv.reader(infile, delimiter=",")
-
-    next(csvfile)         #This will skip for row
-
+    infile.readline()
 
     for record in csvfile:
 
@@ -16,9 +14,9 @@ def main ():
         print("ID:",record[0])
         print("First Name:",record[1])
         print("Last Name:",record[2])
-        print("Salary: $",format(Salary, ",2f"),record[3])
+        print("Salary: $",format(Salary, ",.2f"),sep="")
         print("Bonus:",record[4])
-        print("Total Pay: $",Total_Pay, sep="")
+        print("Total Pay: $",format(Total_Pay, ",.2f"),sep="")
         
         input("Press enter for next customer:")
 
